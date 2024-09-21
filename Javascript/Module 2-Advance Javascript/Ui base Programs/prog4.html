@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+    <style>
+      .divmain {
+        background-color: aquamarine;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        margin: 10px;
+        padding: 20px;
+      }
+
+      input {
+        padding: 5px;
+        border-radius: 5px;
+        border: 5px;
+      }
+      .email {
+        position: relative;
+      }
+      i {
+        position: absolute;
+        margin-left: -20px;
+        margin-top: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="divmain">
+      <div>
+        <input
+          type="text"
+          class="email"
+          id="email1"
+          placeholder="Enter your Email"
+          onkeyup="emailvalid()"
+        />
+        <i class="fa-regular fa-envelope" style="color: red"></i>
+      </div>
+      <div>
+        <input
+          type="text"
+          placeholder="Confirm your Email"
+          id="email2"
+          onkeyup="emailvalid()"
+        />
+        <i class="fa-regular fa-circle-check" id="circle"></i>
+      </div>
+      <!-- <span id="errormsg" style="color: rebeccapurple"></span> -->
+    </div>
+
+    <script>
+      let email1 = document.getElementById("email1");
+      let email2 = document.getElementById("email2");
+      let icon = document.getElementById("circle");
+      let msg = document.getElementById("errormsg");
+      const emailvalid = () => {
+        if (email1.value == email2.value) {
+          // msg.innerHTML = "Matched";
+          icon.style.color = "green";
+        } else {
+          icon.style.color = "black";
+          // msg.innerHTML = "Not Matched";
+        }
+      };
+    </script>
+  </body>
+</html>

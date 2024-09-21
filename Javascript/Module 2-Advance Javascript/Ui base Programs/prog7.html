@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+  />
+    <style>
+      * {
+        font-family: monospace;
+      }
+      .div1 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 300px;
+        width: 600px;
+        background-color: lightskyblue;
+      }
+      .div2 {
+        background-color: white;
+        height: 200px;
+        width: 300px;
+        border-radius: 5px;
+      }
+      .div3 {
+        display: flex;
+      }
+      #hr1 {
+        width: 20px;
+        margin-right: 10px;
+        background-color: black;
+      }
+      #btnquote {
+        color: white;
+        margin-left: 50px;
+        background-color: skyblue;
+        border-color: skyblue;
+        border-radius: 10px;
+        outline: none;
+    }
+    .icon{
+        border-radius: 50%;
+        height: 25px;
+        background-color: white;
+        border-color: skyblue;
+        color: skyblue;
+    }
+    </style>
+  </head>
+
+  <body>
+    <div class="div1">
+      <div class="div2">
+        <h2 style="text-align: center">Quote of the Day</h2>
+        <blockquote id="blkquote">
+          ❝ Never give up because you never know if the next try is going to be
+          the one that works ❞
+        </blockquote>
+        <div class="div3">
+          <hr id="hr1" />
+          <cite style="margin-right: 20px"> Mary Kay Ash</cite>
+        </div>
+        <hr style="width: 80%" />
+        <div style="margin-left: 30px">
+          <button class="icon"><i class="fa-solid fa-volume-high"></i></button>
+          <button class="icon"><i class="fa-regular fa-copy"></i></button>
+          <button class="icon"><i class="fa-brands fa-twitter"></i></i></button>
+          <button id="btnquote" onclick="randomquote()">New Quote</button>
+        </div>
+      </div>
+    </div>
+    <script>
+      const quote = [
+        "Life is like a coin. You can spend it any way you wish, but you only spend it once.”",
+        "Never let the fear of striking out keep you from playing the game.”",
+        "Don’t settle for what life gives you; make life better and build something.”",
+        "The best way to predict your future is to create it.”",
+      ]
+
+      let  blkquote= document.getElementById('blkquote')
+
+      function randomquote(){
+        const randomtxt = Math.floor(Math.random()*quote.length)
+        blkquote.innerHTML = quote[randomtxt]
+      }
+
+    </script>
+  </body>
+</html>

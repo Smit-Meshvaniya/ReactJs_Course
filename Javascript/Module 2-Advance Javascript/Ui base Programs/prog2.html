@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <style>
+      * {
+        font-family: monospace;
+      }
+      #div1 {
+        display: flex;
+        justify-content: center;
+        padding-top: 10px;
+      }
+      #frm {
+        background-color: white;
+        padding: 10px;
+        border-radius: 5px;
+      }
+      #divmain {
+        background-color: cadetblue;
+        width: 200px;
+        padding: 10px;
+      }
+
+      .center {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      #submitbutton {
+        background-color: blue;
+        color: white;
+        padding: 0px 54px;
+      }
+      .error {
+        color: red;
+      }
+
+      .input-container {
+        display: flex;
+        align-items: center;
+        border-radius: 5px;
+      }
+
+      #btn1 {
+        background-color: #fff;
+        border: none;
+        margin-left: -29px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="center">
+      <div id="divmain">
+        <div id="div1">
+          <form action="" id="frm">
+            <h2>Form Validation</h2>
+
+            <label for="name">Full Name</label><br />
+            <input type="text" id="name" name="name" /><br />
+            <span class="error" id="nameError"></span><br />
+
+            <label for="email">Email Address</label><br />
+            <input type="text" id="email" name="email" />
+            <br />
+            <span class="error" id="emailError"></span><br />
+
+            <label for="password">Password</label><br />
+            <div class="input-container">
+              <input type="password" id="passwordid" />
+              <button id="btn1" onclick="todisplay()">
+                <i class="fa-solid fa-eye" id="icon1"></i>
+                <i class="fa-solid fa-eye-slash" id="icon2"></i>
+              </button>
+            </div>
+            <span class="error" id="passwordError"></span><br />
+
+            <label for="BirthDate">Birth Date</label><br />
+            <input type="date" name="" id="birthdate" /><br />
+            <span class="error" id="birthdateError"></span><br />
+
+            <label for="gender">Gender</label><br />
+            <select id="myDropdown" name="options">
+              <option value="">--Select your gender--</option>
+              <option value="1">Male</option>
+              <option value="2">Female</option>
+            </select>
+            <span class="error" id="myDropdownError"></span><br />
+            <br />
+            <button type="submit" id="submitbutton">Submit</button>
+            <span id="Submitspan"></span>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script>
+      const inputpassword = document.getElementById("passwordid");
+      const showicon = document.getElementById("icon1");
+      const hideicon = document.getElementById("icon2");
+
+      hideicon.style.display = "none";
+
+      function todisplay() {
+        if (inputpassword.type === "password") {
+          inputpassword.type = "text";
+          showicon.style.display = "none";
+          hideicon.style.display = "block";
+        } else {
+          inputpassword.type = "password";
+          showicon.style.display = "block";
+          hideicon.style.display = "none";
+        }
+      }
+
+      document
+        .getElementById("frm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+
+          const name = document.getElementById("name");
+          const email = document.getElementById("email");
+          const password = document.getElementById("passwordid");
+
+          const birthdate = document.getElementById("birthdate");
+          const myDropdown = document.getElementById("myDropdown");
+          const Submitspan = document.getElementById("Submitspan");
+
+          let isValid = true;
+
+
+          if (name.value.trim() === "") {
+            document.getElementById("nameError").textContent =
+              "Name is required";
+            isValid = false;
+          } else if (name.value.length < 2) {
+            document.getElementById("nameError").textContent =
+              "Name must be at least 2 characters long";
+            isValid = false;
+          } else {
+            document.getElementById("nameError").textContent = "";
+          }
+
+          const emailPattern = /^[a-zA-Z]+@[a-z]+\.[a-z]+$/;
+          if (!emailPattern.test(email.value)) {
+            document.getElementById("emailError").textContent =
+              "Enter a valid email address";
+            isValid = false;
+          } else {
+            document.getElementById("emailError").textContent = "";
+          }
+
+          const passwordPattern = /^[A-Z]+[a-z]+[0-9]+$/;
+          if (password.value.length < 6) {
+            document.getElementById("passwordError").textContent =
+              "Password must be at least 6 character long";
+            isValid = false;
+          } else if (!passwordPattern.test(password.value)) {
+            document.getElementById("passwordError").textContent =
+              "Password must be at least 1 capital characters and require number ";
+            isValid = false;
+          } else {
+            document.getElementById("passwordError").textContent = "";
+          }
+
+          if (birthdate.value == "") {
+            document.getElementById("birthdateError").textContent =
+              "Select birthdate properly";
+            isValid = false;
+          } else {
+            document.getElementById("birthdateError").textContent = "";
+          }
+
+          if (myDropdown.value === "") {
+            document.getElementById("myDropdownError").textContent =
+              "Select dropdown properly";
+            console.log(myDropdown.value);
+
+            isValid = false;
+          } else {
+            document.getElementById("myDropdownError").textContent = "";
+          }
+
+          if (isValid) {
+            Submitspan.innerHTML = "Submit Form Successfully";
+          }
+        });
+    </script>
+  </body>
+</html>

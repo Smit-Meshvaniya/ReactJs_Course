@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    table {
+      border-collapse: collapse;
+    }
+    th,
+    td {
+      border: 1px solid black;
+    }
+    th {
+      text-align: left;
+    }
+    input,
+    button {
+      width: 80px;
+      margin: 10px;
+    }
+  </style>
+  <body>
+    <table>
+      <tr>
+        <th>Product info</th>
+        <th>Quantity</th>
+        <th>Price</th>
+        <th>Total price</th>
+        <th></th>
+      </tr>
+      <tr>
+        <td>
+          <img
+            src="./images//istockphoto-483960103-612x612.jpg"
+            style="height: 50px; width: 50px"
+          />
+          men Tshirt
+        </td>
+        <td><input type="text" name="" id="input1" onkeyup="inp1(this)" /></td>
+        <td id="td1">₹1500</td>
+        <td id="total1"></td>
+        <td><button onclick="removetr(this)">Remove</button></td>
+      </tr>
+      <tr>
+        <td>
+          <img
+            src="./images/kids.jpg"
+            style="height: 50px; width: 50px"
+            alt=""
+          />
+          Kids Games
+        </td>
+        <td><input type="text" name="" id="input2" onkeyup="inp2(this)" /></td>
+        <td id="td2">₹500</td>
+        <td id="total2"></td>
+        <td><button onclick="removetr(this)">Remove</button></td>
+      </tr>
+    </table>
+    <script>
+      // let input1 = document.getElementById("input1");
+      function removetr(btn) {
+        const r = btn.parentNode.parentNode;
+        r.parentNode.removeChild(r);
+      }
+      const inp1 = (e) => {
+        let getinputvalue = e.value;
+
+        let price = document.getElementById("td1").innerText.replace("₹", "");
+        let res = getinputvalue * price;
+
+        console.log(res);
+        document.getElementById("total1").innerHTML = res;
+      };
+      const inp2 = (e) => {
+        let getinputvalue = e.value;
+
+        let price = document.getElementById("td2").innerText.replace("₹", "");
+        let res = getinputvalue * price;
+
+        console.log(res);
+        document.getElementById("total2").innerHTML = res;
+      };
+    </script>
+  </body>
+</html>

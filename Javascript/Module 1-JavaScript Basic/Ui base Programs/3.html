@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sliding Squares</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <style>
+      .container {
+        display: flex;
+        flex-direction: row;
+        gap: 80px;
+      }
+
+      .main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .square,
+      .square2,
+      .square3,
+      .square4 {
+        width: 100px;
+        height: 100px;
+      }
+
+      .square {
+        background-color: lightblue;
+      }
+
+      .square2 {
+        background-color: red;
+      }
+
+      .square3 {
+        background-color: green;
+      }
+
+      .square4 {
+        background-color: yellow;
+      }
+
+      .squareset-container {
+        overflow: hidden;
+        width: 500px;
+      }
+
+      .squareset {
+        display: flex;
+        transition: transform 0.5s ease;
+        gap: 20px;
+      }
+
+      .bgclr {
+        display: flex;
+        flex-direction: column;
+        background-color: black;
+        width: 500px;
+        height: 250px;
+        margin-left: 500px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="bgclr">
+      <h1 class="main" style="color: white">Simple JavaScript slider</h1>
+      <div class="main squareset-container">
+        <div class="squareset">
+          <div class="square"></div>
+          <div class="square2"></div>
+          <div class="square3"></div>
+          <div class="square4"></div>
+          <div class="square"></div>
+          <div class="square2"></div>
+          <div class="square3"></div>
+          <div class="square4"></div>
+        </div>
+      </div>
+      <br />
+      <div class="container main">
+        <i
+          class="fa-solid fa-arrow-left"
+          id="arrow-left"
+          style="height: 20px; width: 20px; color: #ffffff; cursor: pointer"
+        ></i>
+        <i
+          class="fa-solid fa-arrow-right"
+          id="arrow-right"
+          style="height: 20px; width: 20px; color: #ffffff; cursor: pointer"
+        ></i>
+      </div>
+    </div>
+    <script>
+      // script.js
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const squareset = document.querySelector(".squareset");
+        const arrowLeft = document.getElementById("arrow-left");
+        const arrowRight = document.getElementById("arrow-right");
+
+        const squareWidth = 100;
+        const gap = 20;
+        const totalWidth = (squareWidth + gap) * 4;
+
+        let currentIndex = 0;
+
+        function updateSlider() {
+          const offset = -currentIndex * (squareWidth + gap);
+          console.log(offset);
+          squareset.style.transform = `translateX(${offset}px)`;
+        }
+
+        arrowLeft.addEventListener("click", () => {
+          if (currentIndex > 0) {
+            currentIndex--;
+            updateSlider();
+          }
+        });
+
+        arrowRight.addEventListener("click", () => {
+          if (currentIndex < 3) {
+            currentIndex++;
+            updateSlider();
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

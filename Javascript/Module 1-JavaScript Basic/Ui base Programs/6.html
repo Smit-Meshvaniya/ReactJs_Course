@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        font-family: monospace;
+      }
+      #div1 {
+        display: flex;
+        justify-content: center;
+        padding-top: 10px;
+      }
+      #frm {
+        background-color: white;
+        padding: 20px;
+        border-radius: 5px;
+      }
+      #divmain {
+        background-color: gainsboro;
+        width: 200px;
+        padding: 10px;
+      }
+
+      .center {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      button {
+        background-color: blue;
+        color: white;
+        padding: 0px 53px;
+      }
+      label {
+        color: gainsboro;
+      }
+      .error {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="center">
+      <div id="divmain">
+        <div id="div1">
+          <form id="frm" novalidate>
+            <h2>Sign up</h2>
+
+            <label for="name">Username:</label><br />
+            <input type="text" id="name" name="name" /><br />
+            <span class="error" id="nameError"></span><br />
+
+            <label for="email">Email:</label><br />
+            <input type="text" id="email" name="email" />
+            <br />
+            <span class="error" id="emailError"></span><br />
+
+            <label for="password">Password:</label><br />
+            <input type="text" id="password" name="password" />
+            <br />
+            <span class="error" id="passwordError"></span><br />
+
+            <label for="confirmpassword">ConfirmPassword:</label><br />
+            <input type="text" id="confirmpassword" name="confirmpassword" />
+            <span class="error" id="confirmpasswordError"></span><br /><br />
+
+            <button type="submit">SIGN UP</button>
+            <span id="Submitspan"></span>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script>
+      document
+        .getElementById("frm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+
+          const name = document.getElementById("name");
+          const email = document.getElementById("email");
+          const password = document.getElementById("password");
+          const confirmpassword = document.getElementById("confirmpassword");
+          const Submitspan = document.getElementById("Submitspan");
+
+          let isValid = true;
+
+          if (name.value.trim() === "") {
+            document.getElementById("nameError").textContent =
+              "Name is required";
+            isValid = false;
+          } else if (name.value.length < 2) {
+            document.getElementById("nameError").textContent =
+              "Name must be at least 2 characters long";
+            isValid = false;
+          } else {
+            const errorElements = (document.getElementById(
+              "nameError"
+            ).textContent = "");
+          }
+
+          const emailPattern = /^[a-zA-Z]+@[a-z]+\.[a-z]+$/;
+          if (!emailPattern.test(email.value)) {
+            document.getElementById("emailError").textContent =
+              "Enter a valid email address";
+            isValid = false;
+          } else {
+            const errorElements = (document.getElementById(
+              "emailError"
+            ).textContent = "");
+          }
+
+          const passwordPattern = /^[A-Z]+[a-z]+[0-9]+$/;
+          if (password.value.length < 6) {
+            document.getElementById("passwordError").textContent =
+              "Password must be at least 6 character long";
+            isValid = false;
+          } else if (!passwordPattern.test(password.value)) {
+            document.getElementById("passwordError").textContent =
+              "Password must be at least 1 capital characters and require number ";
+            isValid = false;
+          } else {
+            const errorElements = (document.getElementById(
+              "passwordError"
+            ).textContent = "");
+          }
+
+          if (confirmpassword.value !== password.value) {
+            document.getElementById("confirmpasswordError").textContent =
+              "Enter a password again";
+            isValid = false;
+          } else {
+            const errorElements = (document.getElementById(
+              "confirmpasswordError"
+            ).textContent = "");
+          }
+
+          if (isValid) {
+            Submitspan.innerHTML = "Submit Form Successfully";
+          }
+        });
+    </script>
+  </body>
+</html>

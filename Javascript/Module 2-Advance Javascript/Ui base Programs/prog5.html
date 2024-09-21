@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <style>
+      .div1 {
+        display: flex;
+        position: relative;
+      }
+      .inp1 {
+        padding-left: 30px;
+        border: 1px solid aqua;
+        box-shadow: 1px 1px 3px aqua;
+      }
+      .inp1:focus {
+        box-shadow: 0 0 10px aqua;
+        outline: none;
+      }
+      #iconlock {
+        position: absolute;
+        left: 6px;
+        top: 2px;
+
+        color: white;
+      }
+      .div2 {
+        position: absolute;
+        background-color: aqua;
+        height: 20px;
+        width: 30px;
+      }
+      #btn1{
+        position: absolute;
+        left: 166px;
+        border: none;
+        background-color: white;
+        top: 1px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="div1">
+      <button id="btn1" onclick="todisplay()">
+        <i class="fa-solid fa-eye" id="icon1"></i>
+        <i class="fa-solid fa-eye-slash" id="icon2"></i>
+      </button>
+      <div class="div2">
+        <i class="fa-solid fa-lock" id="iconlock"></i>
+      </div>
+      <input type="password" class="inp1" id="passwordid" />
+    </div>
+    <script>
+        const inputpassword = document.getElementById("passwordid");
+      const showicon = document.getElementById("icon1");
+      const hideicon = document.getElementById("icon2");
+
+      hideicon.style.display = "none";
+
+      function todisplay() {
+        if (inputpassword.type === "password") {
+          inputpassword.type = "text";
+          showicon.style.display = "none";
+          hideicon.style.display = "block";
+        } else {
+          inputpassword.type = "password";
+          showicon.style.display = "block";
+          hideicon.style.display = "none";
+        }
+      }
+    </script>
+  </body>
+</html>

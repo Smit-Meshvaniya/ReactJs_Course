@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p id="p1"></p>
+    <script>
+
+
+      let d;
+      let dayno = parseInt(prompt("Enter the no for days between 1 to 7"));
+      switch (dayno) {
+        case 1:
+          d = "Sunday";
+          break;
+        case 2:
+          d = "Monday";
+          break;
+        case 3:
+          d = "Tuesday";
+          break;
+        case 4:
+          d = "Wednesday";
+          break;
+        case 5:
+          d = "Thursday";
+          break;
+        case 6:
+          d = "Friday";
+          break;
+        case 7:
+          d = "Saturday";
+          break;
+
+        default:
+          d="no is invalid";
+      }
+      document.getElementById("p1").innerHTML = "Current day is " + d;
+    </script>
+  </body>
+</html>

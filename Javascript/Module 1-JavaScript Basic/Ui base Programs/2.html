@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create result</title>
+  </head>
+  <body>
+    <label style="margin-left: 50px">Enter Marks</label><br /><br />
+    C Language <input type="text" id="inpt1" /><br /><br />
+    C++ Language <input type="text" id="inpt2" /><br /><br />
+    Database <input type="text" id="inpt3" /><br /><br />
+    HTML <input type="text" id="inpt4" /><br /><br />
+    CSS <input type="text" id="inpt5" /><br /><br />
+    php <input type="text" id="inpt6" /><br /><br />
+    Core java <input type="text" id="inpt7" /><br /><br />
+    <button onclick="resfunc()">Result</button><br /><br />
+    <span>Total is :</span><label for="" id="label1"></label>
+    <span style="margin-left: 40px">Percentage is :</span
+    ><label for="" id="label2"></label>
+    <script>
+      const resfunc = () => {
+        let total = 350;
+        let getvalue1 = parseInt(document.getElementById("inpt1").value);
+        let getvalue2 = parseInt(document.getElementById("inpt2").value);
+        let getvalue3 = parseInt(document.getElementById("inpt3").value);
+        let getvalue4 = parseInt(document.getElementById("inpt4").value);
+        let getvalue5 = parseInt(document.getElementById("inpt5").value);
+        let getvalue6 = parseInt(document.getElementById("inpt6").value);
+        let getvalue7 = parseInt(document.getElementById("inpt7").value);
+
+        let values = [
+          getvalue1,
+          getvalue2,
+          getvalue3,
+          getvalue4,
+          getvalue5,
+          getvalue6,
+          getvalue7,
+        ];
+        let val = 0;
+
+        for (let i = 0; i < values.length; i++) {
+          val += values[i];
+        }
+        document.getElementById("label1").innerHTML = val + "/" + total;
+
+        let Percentage = (val / total) * 100;
+        let clear = Math.floor(Percentage);
+        document.getElementById("label2").innerHTML = clear + "%";
+      };
+    </script>
+  </body>
+</html>

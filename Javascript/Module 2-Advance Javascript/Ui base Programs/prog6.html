@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <style>
+      * {
+        font-family: monospace;
+      }
+      .div1 {
+        display: flex;
+        justify-content: center;
+      }
+      .div2 {
+        display: flex;
+        justify-content: center;
+        height: 450px;
+        width: 700px;
+        background-color: gainsboro;
+        align-items: center;
+      }
+      .div3 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 300px;
+        width: 450px;
+        background-color: white;
+      }
+      .div4 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+      }
+      #btn1 {
+        position: absolute;
+        left: 145px;
+        background-color: white;
+        border: none;
+        color: green;
+      }
+      #passwordid {
+        width: 150%;
+      }
+      .mainprogressbar {
+        display: flex;
+        flex-direction: row;
+        width: 48%;
+        height: 8px;
+        background-color: white;
+        border-radius: 5px;
+        margin-top: 5px;
+      }
+      #progressbar1 {
+        width: 48%;
+        height: 8px;
+        background-color: lightgray;
+        border-radius: 5px;
+        margin-top: 5px;
+      }
+      #progressbar2 {
+        width: 48%;
+        height: 8px;
+        background-color: lightgray;
+        border-radius: 5px;
+        margin-top: 5px;
+      }
+      #progressbar3 {
+        width: 48%;
+        height: 8px;
+        background-color: lightgray;
+        border-radius: 5px;
+        margin-top: 5px;
+      }
+      .progressbar {
+        color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="div1">
+      <div class="div2">
+        <div class="div3">
+          <h2>Password Strength Indicator</h2>
+          <div class="div4">
+            <input type="text" id="passwordid" oninput="passwordstrength()" />
+            <button id="btn1" onclick="todisplay()">
+              <i id="icon1">Hide</i>
+              <i id="icon2">Unhide</i>
+            </button>
+          </div>
+          <div class="mainprogressbar">
+            <div id="progressbar1"></div>
+            <div id="progressbar2"></div>
+            <div id="progressbar3"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      const inputpassword = document.getElementById("passwordid");
+      const showicon = document.getElementById("icon1");
+      const hideicon = document.getElementById("icon2");
+
+      hideicon.style.display = "none";
+
+      function todisplay() {
+        if (inputpassword.type === "text") {
+          inputpassword.type = "password";
+          showicon.style.display = "none";
+          hideicon.style.display = "block";
+        } else {
+          inputpassword.type = "text";
+          showicon.style.display = "block";
+          hideicon.style.display = "none";
+        }
+      }
+      function passwordstrength() {
+        const password = document.getElementById("passwordid").value;
+        const progressbar1 = document.getElementById("progressbar1");
+        const progressbar2 = document.getElementById("progressbar2");
+        const progressbar3 = document.getElementById("progressbar3");
+
+        if (password.length <= 6) {
+          if (/[A-Z]/.test(password)) {
+            progressbar1.style.backgroundColor = "red";
+          }
+          if (/[a-z]/.test(password)) {
+            progressbar2.style.backgroundColor = "orange";
+          }
+          if (/[0-9]/.test(password)) {
+            progressbar3.style.backgroundColor = "green";
+          }
+        } else {
+          progressbar1.style.backgroundColor = "lightgray";
+          progressbar1.style.backgroundColor = "lightgray";
+          progressbar1.style.backgroundColor = "lightgray";
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,36 @@
+.forSearchSection {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.inputforsearch {
+  width: 372px;
+  outline: none;
+  border: none;
+}
+
+.forallcatandicon {
+  border: none;
+  
+}
+
+.navicons{
+    display: flex;
+    align-items: center;
+    
+}
+/* .navspantext{
+    margin-left: 2px;
+} */
+.icon-fire{
+  color: green;
+  transition: color 0.3s;
+}
+
+.icon-fire:hover{
+  color: lightgreen;
+}
+
+.mainhomedivfornav{
+  display: flex;
+  justify-content: center;
+}

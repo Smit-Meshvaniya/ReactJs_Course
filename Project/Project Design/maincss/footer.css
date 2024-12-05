@@ -1,0 +1,21 @@
+.footer-main{
+    background-color: rgba(23, 20, 20, 0.908);
+    color: white;
+  }
+  .footer-firstmaincontainer{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+  }
+  .footer-Secondcontainer{
+    display: flex;
+    justify-content: space-around;
+  }
+  .footer-Thirdmaincontainer{
+    text-align: center;
+    
+  }
+  .Footer-Linkstyle{
+    text-decoration: none;
+    color: white;
+  }

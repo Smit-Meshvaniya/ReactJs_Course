@@ -1,0 +1,97 @@
+.main-content-align{
+    display: flex;
+    justify-content: center;
+}
+
+.main-content-container {
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 350px;
+  padding: 20px;
+  margin: 20px;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1); 
+  transition: transform 0.3s ease;
+}
+.input-maincontainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.input-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 300px;
+  background-color: lightgray;
+}
+
+.input-container i {
+  padding-left: 15px;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px;
+  background-color: lightgray;
+  border: none;
+  outline: none;
+}
+
+.input-field::placeholder {
+  color: #888;
+}
+#lock-id {
+  padding-right: 15px;
+}
+
+.rememberme-container {
+  display: flex;
+  align-items: center;
+  font-size: 17px;
+  margin-top: 5px;
+  margin-left: 4px;
+}
+
+.rememberme-container input[type="checkbox"] {
+  transform: scale(1.2);
+  margin-right: 10px;
+}
+
+.rememberme-container label {
+  margin: 0;
+  cursor: pointer;
+}
+
+.button-Login {
+  width: 300px;
+  height: 40px;
+  margin-top: 30px;
+  border: none;
+  outline: none;
+  background-color: black;
+  color: white;
+}
+.text-field-loginwith {
+  color: #888;
+  margin-top: 30px;
+  text-align: center;
+}
+
+.social-media-container{
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+}
+.social-media-div {
+    width: 150px;
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+
+  border: 2px solid lightgray;
+  background-color: white;
+}

@@ -1,0 +1,63 @@
+.image-container {
+  display: flex;
+  text-align: center;
+  margin-top: 50px;
+  margin-left: 100px;
+  gap: 200px;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-bottom: 50px;
+}
+.image-container img {
+  width: 50%;
+  height: auto;
+}
+.description {
+  font-size: 18px;
+  margin-top: 20px;
+  color: #333;
+}
+
+.image-textcontainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.imgename {
+  font-size: 50px;
+}
+.imgeprice {
+  font-size: 30px;
+  margin-right: 150px;
+}
+
+.quantity-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 100px;
+}
+.quantity-btntext {
+  display: flex;
+  border: 2px solid black;
+}
+.btn-quantity {
+  width: 30px;
+  border: none;
+  outline: none;
+  background-color: white;
+}
+.quantity-input {
+  border: none;
+  outline: none;
+}
+.add-btncontainer {
+  margin-top: 30px;
+}
+.btn-addtocart {
+  background-color: black;
+  color: white;
+  width: 330px;
+  padding: 10px;
+}

@@ -1,0 +1,76 @@
+.divforcard2 {
+  background-color: rgb(66, 60, 60);
+  margin-top: -50px;
+  border-radius: 5px;
+  display: flex;
+  gap: 600px;
+  justify-content: space-around;
+  height: 50px;
+}
+
+.arrowiconstyle {
+  color: white;
+  height: 20px;
+  border: 5px solid black;
+  border-radius: 50%;
+  padding: 5px;
+}
+
+.btnforarrow {
+  border: none;
+  background-color: transparent;
+  outline: none;
+}
+
+.carouselmain {
+  max-width: 1000px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.textimage {
+  display: flex;
+  align-items: center;
+  margin-right: 150px;
+  margin-bottom: 40px;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.headtext {
+  display: flex;
+  flex-direction: column;
+  padding-left: 100px;
+  padding-right: 100px;
+  align-items: center;
+  gap: 18px;
+  color: black;
+}
+
+.bg {
+  background-color: gray;
+  display: flex;
+  align-items: center;
+  padding-top: 100px;
+  padding-bottom: 10px;
+}
+
+#slider-image {
+  width: 350px;
+  border-radius: 10px;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+#slider-title,
+#slider-description {
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.hidden {
+  opacity: 0;
+  transform: translateX(-50px);
+}
+
+.visible {
+  opacity: 1;
+  transform: translateX(0);
+}

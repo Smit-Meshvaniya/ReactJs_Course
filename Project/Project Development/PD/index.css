@@ -1,0 +1,54 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.logoclass1 {
+  margin-right: 10px;
+}
+
+.navbarmain1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: larger;
+
+  margin: 0 50px;
+  background-color: black;
+  font-family: "Lato", sans-serif;
+}
+.navtabs2 nav {
+  display: flex;
+}
+
+.navtabs2 a {
+  text-decoration: none;
+  margin: 0 10px;
+  color: white;
+}
+
+.navicons1 a {
+  margin: 0 10px;
+}
+
+.explorebtn-container {
+  text-align: center;
+}
+
+.explorebtn {
+  background-color: black;
+  font-size: 18px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  margin-bottom: 15px;
+}
+.btn-span {
+  color: #fff;
+}
+.explorebtn i {
+  margin-right: 8px;
+}
